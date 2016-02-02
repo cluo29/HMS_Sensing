@@ -25,21 +25,25 @@ public class Collection extends Service implements SensorEventListener{
     private static Sensor mHeartRate;
     private static int heart_rate;
 
-    //testing conditions: duration, sensing frequency: SENSOR_DELAY_FASTEST
-    //testing duration
-    //we test for 300 seconds
-    private static int duration = 300;
-
-    //how many heart rate rows are got
+    //how many heart rate rows are collected
     private static int heart_rate_count=0;
 
     //start time of testing
     private static long start_time = 0;
 
+    //testing conditions: sensor type: heart rate
+    // duration: 300
+    // sensing frequency: SENSOR_DELAY_FASTEST
+    //testing duration
+    //we test for 300 seconds
+
+    private static int duration = 300;
+
     @Override
     public void onCreate() {
         mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
 
+        //sensor type
         mHeartRate = mSensorManager.getDefaultSensor(Sensor.TYPE_HEART_RATE);
 
         //testing frequency
@@ -70,7 +74,7 @@ public class Collection extends Service implements SensorEventListener{
             {
                 start_time = System.currentTimeMillis();
 
-                Log.d("SENSORS10", "testing starts at = " + start_time);
+                Log.d("SENSORS10", "sensing starts at = " + start_time);
             }
         }
     }
