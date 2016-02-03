@@ -57,6 +57,13 @@ public class Collection extends Service implements SensorEventListener{
 
         if (sensor.getType() == Sensor.TYPE_HEART_RATE)
         {
+            if(start_time == 0)
+            {
+                start_time = System.currentTimeMillis();
+
+                Log.d("SENSORS10", "sensing starts at = " + start_time);
+            }
+            
             if(System.currentTimeMillis() - start_time > duration * 1000)
             {
                 Log.d("SENSORS10", "In " + duration +" seconds, sent readings = " + heart_rate_count);
@@ -70,12 +77,7 @@ public class Collection extends Service implements SensorEventListener{
             intent.putExtra(EXTRA_DATA, heart_rate);
             sendBroadcast(intent);
 
-            if(start_time == 0)
-            {
-                start_time = System.currentTimeMillis();
 
-                Log.d("SENSORS10", "sensing starts at = " + start_time);
-            }
         }
     }
 
