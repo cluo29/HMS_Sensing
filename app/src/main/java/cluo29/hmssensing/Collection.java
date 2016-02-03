@@ -63,7 +63,7 @@ public class Collection extends Service implements SensorEventListener{
 
                 Log.d("SENSORS10", "sensing starts at = " + start_time);
             }
-            
+
             if(System.currentTimeMillis() - start_time > duration * 1000)
             {
                 Log.d("SENSORS10", "In " + duration +" seconds, sent readings = " + heart_rate_count);

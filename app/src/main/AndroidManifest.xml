@@ -14,7 +14,7 @@
         android:theme="@style/AppTheme">
 
         <service android:name="cluo29.hmssensing.Collection" android:exported="true" />
-
+        <service android:name="cluo29.hmssensing.Accelerometer" android:exported="true" />
 
         <activity
             android:name=".MainActivity"
