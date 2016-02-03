@@ -64,7 +64,11 @@ public class Accelerometer extends Service implements SensorEventListener {
             } else
             {
                 intervalSum = intervalSum - last_time + System.currentTimeMillis();
+
+                last_time = System.currentTimeMillis();
             }
+
+
 
             if(System.currentTimeMillis() - start_time > duration * 1000)
             {
