@@ -30,7 +30,9 @@ public class MainActivity extends AppCompatActivity {
 
         //startService(new Intent(MainActivity.this, Collection.class));
 
-        startService(new Intent(MainActivity.this, Accelerometer.class));
+        startService(new Intent(MainActivity.this, FloatGenerator.class));
+
+        //startService(new Intent(MainActivity.this, Accelerometer.class));
 
     }
 

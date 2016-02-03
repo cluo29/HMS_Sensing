@@ -36,6 +36,8 @@ public class Accelerometer extends Service implements SensorEventListener {
 
     private static int duration = 300;
 
+    private static boolean testing = true;
+
     @Override
     public void onCreate() {
         mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
@@ -44,7 +46,7 @@ public class Accelerometer extends Service implements SensorEventListener {
         mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
 
         //testing frequency
-        mSensorManager.registerListener(this, mAccelerometer, SensorManager.SENSOR_DELAY_FASTEST);
+        mSensorManager.registerListener(this, mAccelerometer, SensorManager.SENSOR_DELAY_NORMAL);
     }
 
 
@@ -70,8 +72,10 @@ public class Accelerometer extends Service implements SensorEventListener {
 
 
 
-            if(System.currentTimeMillis() - start_time > duration * 1000)
+            if(System.currentTimeMillis() - start_time > duration * 1000 &&testing)
             {
+                testing = false;
+
                 Log.d("SENSORS10", "In " + duration +" seconds, avg interval = " + intervalSum*1.0/count);
 
                 Log.d("SENSORS10", "In " + duration +" seconds, sent readings = " + count);
