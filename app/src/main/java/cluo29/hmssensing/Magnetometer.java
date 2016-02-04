@@ -1,6 +1,7 @@
 package cluo29.hmssensing;
 
 import android.app.Service;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -13,6 +14,10 @@ import android.util.Log;
  * Created by Comet on 04/02/16.
  */
 public class Magnetometer extends Service implements SensorEventListener {
+
+    public static final String ACTION_SENSOR_WATERMARKING = "ACTION_SENSOR_WATERMARKING";
+
+    public static final String EXTRA_DATA = "data";
 
 
     private static SensorManager mSensorManager;
@@ -46,7 +51,7 @@ public class Magnetometer extends Service implements SensorEventListener {
         mMagentometer = mSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
 
         //testing frequency
-        mSensorManager.registerListener(this, mMagentometer, SensorManager.SENSOR_DELAY_NORMAL);
+        mSensorManager.registerListener(this, mMagentometer, SensorManager.SENSOR_DELAY_FASTEST);
     }
 
 
@@ -82,6 +87,17 @@ public class Magnetometer extends Service implements SensorEventListener {
             }
 
             count++;
+
+            /*
+            ContentValues data = new ContentValues();
+            data.put("float_x", event.values[0]);
+            data.put("float_y", event.values[1]);
+            data.put("float_z", event.values[2]);
+
+            Intent intent = new Intent(ACTION_SENSOR_WATERMARKING);
+            intent.putExtra(EXTRA_DATA, data);
+            sendBroadcast(intent);
+            */
 
         }
     }
