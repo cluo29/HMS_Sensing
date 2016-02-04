@@ -88,7 +88,7 @@ public class Magnetometer extends Service implements SensorEventListener {
 
             count++;
 
-            /*
+
             ContentValues data = new ContentValues();
             data.put("float_x", event.values[0]);
             data.put("float_y", event.values[1]);
@@ -97,7 +97,7 @@ public class Magnetometer extends Service implements SensorEventListener {
             Intent intent = new Intent(ACTION_SENSOR_WATERMARKING);
             intent.putExtra(EXTRA_DATA, data);
             sendBroadcast(intent);
-            */
+
 
         }
     }
