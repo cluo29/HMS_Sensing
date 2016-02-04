@@ -35,6 +35,8 @@ public class FloatGenerator extends Service {
 
                 if (System.currentTimeMillis() - start_time > duration * 1000) {
                     Log.d("SENSORS10", "In " + duration + " seconds, sent readings = " + count);
+
+                    break;
                 }
 
                 float data = 255.5f;
@@ -47,7 +49,7 @@ public class FloatGenerator extends Service {
 
                 try {
                     Thread.sleep(500);
-                    //detect once every 0.5 secs
+                    //detect once every 0.1 secs
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

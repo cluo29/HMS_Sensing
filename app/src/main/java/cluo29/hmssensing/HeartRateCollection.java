@@ -15,7 +15,7 @@ import android.util.Log;
 
 //This service collects sensor data and sends intent
 
-public class Collection extends Service implements SensorEventListener{
+public class HeartRateCollection extends Service implements SensorEventListener{
 
     public static final String ACTION_SENSOR_WATERMARKING = "ACTION_SENSOR_WATERMARKING";
 
