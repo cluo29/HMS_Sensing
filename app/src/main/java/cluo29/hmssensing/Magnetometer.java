@@ -51,7 +51,7 @@ public class Magnetometer extends Service implements SensorEventListener {
         mMagentometer = mSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
 
         //testing frequency
-        mSensorManager.registerListener(this, mMagentometer, SensorManager.SENSOR_DELAY_FASTEST);
+        mSensorManager.registerListener(this, mMagentometer, SensorManager.SENSOR_DELAY_GAME);
     }
 
 
@@ -67,7 +67,7 @@ public class Magnetometer extends Service implements SensorEventListener {
 
                 last_time = start_time;
 
-                Log.d("SENSORS10", "sensing starts at = " + start_time);
+                Log.d("SENSORS11", "sensing starts at = " + start_time);
             } else
             {
                 intervalSum = intervalSum - last_time + System.currentTimeMillis();
@@ -81,9 +81,9 @@ public class Magnetometer extends Service implements SensorEventListener {
             {
                 testing = false;
 
-                Log.d("SENSORS10", "In " + duration +" seconds, avg interval = " + intervalSum*1.0/count);
+                Log.d("SENSORS11", "In " + duration +" seconds, avg interval = " + intervalSum*1.0/count);
 
-                Log.d("SENSORS10", "In " + duration +" seconds, sent readings = " + count);
+                Log.d("SENSORS11", "In " + duration +" seconds, sent readings = " + count);
             }
 
             count++;
