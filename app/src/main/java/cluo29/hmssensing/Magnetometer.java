@@ -60,7 +60,7 @@ public class Magnetometer extends Service implements SensorEventListener {
         //public static final int SENSOR_DELAY_NORMAL = 3;
 
         //testing frequency
-        mSensorManager.registerListener(this, mMagentometer, 0);
+        mSensorManager.registerListener(this, mMagentometer, 1);
     }
 
 
@@ -84,16 +84,20 @@ public class Magnetometer extends Service implements SensorEventListener {
                 last_time = System.currentTimeMillis();
             }
 
-
-
+//normal test
             if(System.currentTimeMillis() - start_time > duration * 1000 &&testing)
             {
                 testing = false;
 
                 Log.d("SENSORS11", "In " + duration +" seconds, avg interval = " + intervalSum*1.0/count);
 
-                Log.d("SENSORS11", "In " + duration +" seconds, sent readings = " + count);
+                Log.d("SENSORS11", "In " + duration + " seconds, sent readings = " + count);
+
+                mSensorManager.unregisterListener( this ,mMagentometer);
+                //stopSelf();
             }
+
+            Log.d("SENSORS11", "In sensing");
 
             count++;
 
