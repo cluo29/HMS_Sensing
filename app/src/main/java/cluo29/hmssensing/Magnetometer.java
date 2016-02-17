@@ -50,8 +50,17 @@ public class Magnetometer extends Service implements SensorEventListener {
         //sensor type
         mMagentometer = mSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
 
+        /** get sensor data as fast as possible */
+        //public static final int SENSOR_DELAY_FASTEST = 0;
+        /** rate suitable for games */
+        //public static final int SENSOR_DELAY_GAME = 1;
+        /** rate suitable for the user interface  */
+        //public static final int SENSOR_DELAY_UI = 2;
+        /** rate (default) suitable for screen orientation changes */
+        //public static final int SENSOR_DELAY_NORMAL = 3;
+
         //testing frequency
-        mSensorManager.registerListener(this, mMagentometer, SensorManager.SENSOR_DELAY_GAME);
+        mSensorManager.registerListener(this, mMagentometer, 0);
     }
 
 
