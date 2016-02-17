@@ -91,13 +91,13 @@ public class Magnetometer extends Service implements SensorEventListener {
 
                 Log.d("SENSORS11", "In " + duration +" seconds, avg interval = " + intervalSum*1.0/count);
 
-                Log.d("SENSORS11", "In " + duration + " seconds, sent readings = " + count);
+                Log.d("SENSORS11", "In " + duration + " seconds,(RECORD THIS ) sent readings = " + count);
 
                 mSensorManager.unregisterListener( this ,mMagentometer);
                 //stopSelf();
             }
 
-            Log.d("SENSORS11", "In sensing");
+            //Log.d("SENSORS11", "In sensing");
 
             count++;
 
