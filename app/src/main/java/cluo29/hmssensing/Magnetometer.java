@@ -60,7 +60,11 @@ public class Magnetometer extends Service implements SensorEventListener {
         //public static final int SENSOR_DELAY_NORMAL = 3;
 
         //testing frequency
-        mSensorManager.registerListener(this, mMagentometer, 1);
+
+        //from 0 to 3
+
+
+        mSensorManager.registerListener(this, mMagentometer, 0);
     }
 
 
