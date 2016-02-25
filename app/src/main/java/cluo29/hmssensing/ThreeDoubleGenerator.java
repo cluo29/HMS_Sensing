@@ -37,6 +37,11 @@ public class ThreeDoubleGenerator extends Service {
                 if (System.currentTimeMillis() - start_time > duration * 1000) {
                     Log.d("SENSORS11", "In " + duration + " seconds, sent readings = " + count);
 
+                }
+
+                if (System.currentTimeMillis() - start_time > (duration+6.0) * 1000) {
+                    //Log.d("SENSORS11", "In " + duration + " seconds, sent readings = " + count);
+
                     break;
                 }
 
@@ -55,7 +60,7 @@ public class ThreeDoubleGenerator extends Service {
 
                 count++;
                 try {
-                    Thread.sleep(100);
+                    Thread.sleep(10000);
                     //[0] detect once every 0.1 secs
                     //[1] detect once every 1 secs
                     //[2] detect once every 5 secs
