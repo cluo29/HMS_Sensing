@@ -13,6 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <service android:name=".ThreeDoubleGenerator" android:exported="true" />
         <service android:name=".Magnetometer" android:exported="true" />
         <service android:name=".HeartRateCollection" android:exported="true" />
         <service android:name="cluo29.hmssensing.Accelerometer" android:exported="true" />

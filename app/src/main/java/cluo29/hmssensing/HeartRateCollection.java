@@ -54,16 +54,16 @@ public class HeartRateCollection extends Service implements SensorEventListener 
         mHeartRate = mSensorManager.getDefaultSensor(Sensor.TYPE_HEART_RATE);
 
         /** get sensor data as fast as possible */
-        //public static final int SENSOR_DELAY_FASTEST = 0;
+        //public static final int SENSOR_DELAY_FASTEST = 0;356
         /** rate suitable for games */
-        //public static final int SENSOR_DELAY_GAME = 1;
+        //public static final int SENSOR_DELAY_GAME = 1;338
         /** rate suitable for the user interface  */
-        //public static final int SENSOR_DELAY_UI = 2;
+        //public static final int SENSOR_DELAY_UI = 2; 339
         /** rate (default) suitable for screen orientation changes */
-        //public static final int SENSOR_DELAY_NORMAL = 3;
+        //public static final int SENSOR_DELAY_NORMAL = 3; 342
 
         //testing frequency
-        mSensorManager.registerListener(this, mHeartRate, 0);
+        mSensorManager.registerListener(this, mHeartRate, 3);
     }
 
     @Override
