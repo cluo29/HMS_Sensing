@@ -1,15 +1,16 @@
 package cluo29.hmssensing;
 
-/**
- * Created by Comet on 25/02/16.
- */
 import android.app.Service;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.os.IBinder;
 import android.util.Log;
 
-public class ThreeDoubleGenerator extends Service {
+/**
+ * Created by Comet on 26/02/16.
+ */
+
+public class CharGenerator extends Service {
 
     public static final String ACTION_SENSOR_WATERMARKING = "ACTION_SENSOR_WATERMARKING";
 
@@ -48,13 +49,8 @@ public class ThreeDoubleGenerator extends Service {
                 //Log.d("SENSORS11", "sensing ");
 
 
-                ContentValues data = new ContentValues();
-                data.put("double_x", 65.05826712973);  //latitude
-                data.put("double_y", 25.468404709953);  //longitude
-                data.put("double_z", 90.473168152242);  //altitude
-
                 Intent intent = new Intent(ACTION_SENSOR_WATERMARKING);
-                intent.putExtra(EXTRA_DATA, data);
+                intent.putExtra(EXTRA_DATA, 'C');
                 sendBroadcast(intent);
 
 
@@ -71,7 +67,6 @@ public class ThreeDoubleGenerator extends Service {
             }
         }
     };
-
 
 
 
