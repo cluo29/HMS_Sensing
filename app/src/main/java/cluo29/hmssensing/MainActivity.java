@@ -34,9 +34,11 @@ public class MainActivity extends AppCompatActivity {
 
         //startService(new Intent(MainActivity.this, Accelerometer.class));
 
-        //startService(new Intent(MainActivity.this, Magnetometer.class));
+        startService(new Intent(MainActivity.this, Magnetometer.class));
 
-        startService(new Intent(MainActivity.this, ThreeDoubleGenerator.class));
+        //startService(new Intent(MainActivity.this, ThreeDoubleGenerator.class));
+
+        //startService(new Intent(MainActivity.this, CharGenerator.class));
 
     }
 

@@ -88,8 +88,8 @@ public class Magnetometer extends Service implements SensorEventListener {
                 last_time = System.currentTimeMillis();
             }
 
-//normal test
-            if(System.currentTimeMillis() - start_time > duration * 1000 &&testing)
+//normal test, non stop sending
+            if(1==0)//(System.currentTimeMillis() - start_time > duration * 1000 &&testing)
             {
                 testing = false;
 

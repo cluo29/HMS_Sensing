@@ -24,6 +24,7 @@ public class CharGenerator extends Service {
 
     private static int duration = 300;
 
+    private static int charToSendInInt=32;
 
     public Thread solar_thread = new Thread() {
         public void run() {
@@ -49,18 +50,28 @@ public class CharGenerator extends Service {
                 //Log.d("SENSORS11", "sensing ");
 
 
-                Intent intent = new Intent(ACTION_SENSOR_WATERMARKING);
-                intent.putExtra(EXTRA_DATA, 'C');
-                sendBroadcast(intent);
+                //from 32 to 126
 
+                char charToSend=(char)charToSendInInt;
+
+                charToSendInInt++;
+
+                if(charToSendInInt==127)
+                {
+                    charToSendInInt=32;
+                }
+
+                Intent intent = new Intent(ACTION_SENSOR_WATERMARKING);
+                intent.putExtra(EXTRA_DATA, charToSend);
+                sendBroadcast(intent);
 
                 count++;
                 try {
-                    Thread.sleep(100);
-                    //[0] detect once every 0.1 secs
-                    //[1] detect once every 1 secs
-                    //[2] detect once every 5 secs
-                    //[3] detect once every 10 secs
+                    Thread.sleep(1000);
+                    //[0] detect once every 0.005 secs
+                    //[1] detect once every 0.01 secs
+                    //[2] detect once every 0.1 secs
+                    //[3] detect once every 1 secs
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
